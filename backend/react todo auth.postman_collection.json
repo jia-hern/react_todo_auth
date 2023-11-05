@@ -1,0 +1,243 @@
+{
+	"info": {
+		"_postman_id": "fc761f91-513b-4981-9dd0-bd56f82213fb",
+		"name": "react todo auth",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12375739"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"test@test.com\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/auth/signup",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"test@test.com\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "todos",
+			"item": [
+				{
+					"name": "get all todos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"test@test.com\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/todos/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"todos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get todo by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"test@test.com\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/todos/2a42fcc4-ea21-4bdd-abf6-c40006dc66a9",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"todos",
+								"2a42fcc4-ea21-4bdd-abf6-c40006dc66a9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete todo by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJpYXQiOjE2OTg4MDc1MjMsImV4cCI6MTY5ODgxMTEyM30.rJC81QkfAXtk2FjN_BismBx7Y8GdMBy8Pk2uICf-J5s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/todos/2a42fcc4-ea21-4bdd-abf6-c40006dc66a9",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"todos",
+								"2a42fcc4-ea21-4bdd-abf6-c40006dc66a9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create todo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJpYXQiOjE2OTg4MDc1MjMsImV4cCI6MTY5ODgxMTEyM30.rJC81QkfAXtk2FjN_BismBx7Y8GdMBy8Pk2uICf-J5s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"This is a todo title\",\r\n    \"description\":\"This is a todo description\",\r\n    \"date\":\"2023-11-01\",\r\n    \"image\":\"https://www.google.com/imgres?imgurl=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1534270804882-6b5048b1c1fc%3Fauto%3Dformat%26fit%3Dcrop%26q%3D80%26w%3D1000%26ixlib%3Drb-4.0.3%26ixid%3DM3wxMjA3fDB8MHxzZWFyY2h8Mnx8bmV3fGVufDB8fDB8fHww&tbnid=HuQ3ojCry9XTOM&vet=12ahUKEwiSpYy85KGCAxXzUWwGHbumDNAQMygDegQIARB3..i&imgrefurl=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fnew&docid=LNwrK91SfPanUM&w=1000&h=1431&itg=1&q=new%20image&hl=en&authuser=0&ved=2ahUKEwiSpYy85KGCAxXzUWwGHbumDNAQMygDegQIARB3\",\r\n    \"status\":\"not started\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/todos/",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"todos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update todo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJpYXQiOjE2OTg4MDc1MjMsImV4cCI6MTY5ODgxMTEyM30.rJC81QkfAXtk2FjN_BismBx7Y8GdMBy8Pk2uICf-J5s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"title\": \"A new todo\",\r\n            \"image\": \"https://www.google.com/imgres?imgurl=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1534270804882-6b5048b1c1fc%3Fauto%3Dformat%26fit%3Dcrop%26q%3D80%26w%3D1000%26ixlib%3Drb-4.0.3%26ixid%3DM3wxMjA3fDB8MHxzZWFyY2h8Mnx8bmV3fGVufDB8fDB8fHww&tbnid=HuQ3ojCry9XTOM&vet=12ahUKEwiSpYy85KGCAxXzUWwGHbumDNAQMygDegQIARB3..i&imgrefurl=https%3A%2F%2Funsplash.com%2Fs%2Fphotos%2Fnew&docid=LNwrK91SfPanUM&w=1000&h=1431&itg=1&q=new%20image&hl=en&authuser=0&ved=2ahUKEwiSpYy85KGCAxXzUWwGHbumDNAQMygDegQIARB3\",\r\n            \"date\": \"2023-10-31\",\r\n            \"description\": \"Need to tidy up some notes!\",\r\n            \"id\": \"2a42fcc4-ea21-4bdd-abf6-c40006dc66a9\",\r\n            \"status\": \"done\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/todos/3f47f556-a0a5-49c9-95d0-619c5734eb9f",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"todos",
+								"3f47f556-a0a5-49c9-95d0-619c5734eb9f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
